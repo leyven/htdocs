@@ -1,0 +1,10 @@
+html {
+  background-image: url("imagenes/image1.jpg");
+}
+div {
+	color:orange;
+	font-family:"Times New Roman";
+}
+h {
+	color: orange;
+}

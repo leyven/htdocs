@@ -1,0 +1,22 @@
+<?php
+include 'conexion.php';
+if( $_POST['visualizar']=="visualizar")
+{
+$NumeroSolicitud=$_POST['NumeroSolicitud'];
+$conexion=mysql_connect($host,$user,$pass) 
+  or die("Problemas en la conexion");
+mysql_select_db($basedatos,$conexion) or
+  die("Problemas en la seleccion de la base de datos");
+ 
+ $registros=mysql_query("select Url_archivoDescarga from descarga where 
+	num_solicitud='$NumeroSolicitud'",$conexion) or
+  die("Problemas en el select:".mysql_error());
+  $reg=mysql_fetch_array($registros,MYSQL_NUM);
+for ($i=0; $i <$reg.sizeof() ; $i++) { 
+	 $ruta[$i]=$reg[$i];
+}
+ for ($i=0; $i <$num_solicitud.sizeof() ; $i++) { 
+	echo $ruta[$i];
+}
+}
+?>
